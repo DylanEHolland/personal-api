@@ -1,6 +1,7 @@
 LINKEDIN_API_ENDPOINT="https://api.linkedin.com/v2"
 from linkedin import linkedin
 import os
+from flask import request
 
 def get_user_details(client):
     url = '%s/emailAddress?q=members&projection=(elements*(handle~))' % LINKEDIN_API_ENDPOINT
@@ -23,6 +24,6 @@ def linkedin_client():
     return linkedin.LinkedInAuthentication(
         os.environ.get("LINKEDIN_KEY"),
         os.environ.get("LINKEDIN_SECRET"),
-        "http://localhost:3000/auth/linkedin-callback",
+        request.base_url + "/auth/linkedin-callback",
         ['r_liteprofile', 'r_emailaddress']
     )
