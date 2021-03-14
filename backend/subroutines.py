@@ -19,9 +19,9 @@ def get_user_details(client):
 
     return first_name, last_name, email_address
 
-print(request.base_url)
 
 def linkedin_client():
+    print(request.base_url)
     return linkedin.LinkedInAuthentication(
         os.environ.get("LINKEDIN_KEY"),
         os.environ.get("LINKEDIN_SECRET"),
