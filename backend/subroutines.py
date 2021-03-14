@@ -25,6 +25,6 @@ def linkedin_client():
     return linkedin.LinkedInAuthentication(
         os.environ.get("LINKEDIN_KEY"),
         os.environ.get("LINKEDIN_SECRET"),
-        request.host_url + "/auth/linkedin-callback",
+        request.host_url + "auth/linkedin-callback",
         ['r_liteprofile', 'r_emailaddress']
     )
