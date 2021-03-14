@@ -21,10 +21,13 @@ def get_user_details(client):
 
 
 def linkedin_client():
-    print(request.host_url)
+    base_url = "http://localhost:3000"
+    if request.host_url != "http://localhost:5000":
+        base_url = "https://programmerpoe-frontend.herokuapp.com"
+
     return linkedin.LinkedInAuthentication(
         os.environ.get("LINKEDIN_KEY"),
         os.environ.get("LINKEDIN_SECRET"),
-        request.host_url + "auth/linkedin-callback",
+        base_url + "/auth/linkedin-callback",
         ['r_liteprofile', 'r_emailaddress']
     )
