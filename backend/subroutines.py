@@ -21,10 +21,10 @@ def get_user_details(client):
 
 
 def linkedin_client():
-    print(request.base_url)
+    print(request.host_url)
     return linkedin.LinkedInAuthentication(
         os.environ.get("LINKEDIN_KEY"),
         os.environ.get("LINKEDIN_SECRET"),
-        request.base_url + "/auth/linkedin-callback",
+        request.host_url + "/auth/linkedin-callback",
         ['r_liteprofile', 'r_emailaddress']
     )
