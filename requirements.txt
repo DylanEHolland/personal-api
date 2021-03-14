@@ -1,0 +1,13 @@
+flask
+flask_cors
+flask_sqlalchemy
+flask_jwt
+PyJWT==1.7.1
+Flask-JWT-Extended==3.12.1
+python-slugify==3.0.2
+psycopg2
+python3-linkedin
+slugify
+unicode
+cloudinary
+gunicorn==19.9.0
